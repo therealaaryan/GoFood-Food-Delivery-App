@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <div><Navbar /></div>
       <div><Carousel/></div>
-      <div>
+      <div className='m-3'>
         <Card />
       </div>
       <div><Footer /></div>
