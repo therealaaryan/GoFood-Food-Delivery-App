@@ -5,9 +5,9 @@ export default function Card(props) {
     let priceOptions = Object.keys(options);
     
     const cardImageStyle = {
-        height: '200px', // set a fixed height
-        objectFit: 'cover', // this will cover the area, preserving aspect ratio without distortion
-        width: '100%' // this ensures the image is responsive within the card
+        height: '200px', 
+        objectFit: 'cover', 
+        width: '100%' 
     };
 
     return (
