@@ -26,6 +26,7 @@ export default function Card(props) {
             size: size,
             img: props.foodItem.img
         });
+        
         console.log(data)
     }
 
@@ -50,7 +51,7 @@ export default function Card(props) {
                             <option key={i + 1} value={i + 1}> {i + 1} </option>
                         ))}
                     </select>
-                    <select className='flex-shrink-0 bg-success rounded text-white' style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', marginRight: '0.5rem' }} ref = {priceRef} onChange={(e) => setSize(e.target.value)}>
+                    <select className='flex-shrink-0 bg-success rounded text-white' style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', marginRight: '0.5rem' }} ref={priceRef} onChange={(e) => setSize(e.target.value)}>
                         {priceOptions.map((data) => (
                             <option key={data} value={data}>{data}</option>
                         ))}
