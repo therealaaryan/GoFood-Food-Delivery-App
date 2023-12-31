@@ -19,23 +19,28 @@ export default function MyOrder() {
         });
         if (response.ok) {
             const responseData = await response.json();
-            
-            const orderData = responseData[0].order_data;
-            const groups = orderData.reduce((acc, item) => {
-                
-                const date = item.Order_date || (item.length && item[0].Order_date);
-                if (date) {
-                    if (!acc[date]) acc[date] = [];
-                    if (Array.isArray(item)) {
-                       
-                        acc[date].push(...item.slice(1));
-                    } else {
-                        acc[date].push(item);
+          
+            if (Array.isArray(responseData) && responseData.length > 0 && responseData[0].order_data) {
+                const orderData = responseData[0].order_data;
+                const groups = orderData.reduce((acc, item) => {
+                    
+                    const date = item.Order_date || (item.length && item[0].Order_date);
+                    if (date) {
+                        if (!acc[date]) acc[date] = [];
+                        if (Array.isArray(item)) {
+                            
+                            acc[date].push(...item.slice(1));
+                        } else {
+                            acc[date].push(item);
+                        }
                     }
-                }
-                return acc;
-            }, {});
-            setOrderGroups(groups);
+                    return acc;
+                }, {});
+                setOrderGroups(groups);
+            } else {
+                
+                setOrderGroups({});
+            }
         } else {
             console.error('Failed to fetch orders:', response.statusText);
         }
@@ -57,7 +62,6 @@ export default function MyOrder() {
                                 {items.filter(item => item.name && item.price).map((item, itemIndex) => (
                                     <div key={item.id} className='col-12 col-md-6 col-lg-3'>
                                         <div className="card mt-3" style={{ width: "16rem", maxHeight: "360px" }}>
-                                            
                                             <div className="card-body">
                                                 <h5 className="card-title">{item.name}</h5>
                                                 <p>{item.qty} {item.size} ₹{item.price}/-</p>
@@ -68,15 +72,15 @@ export default function MyOrder() {
                             </div>
                         ))
                     ) : (
-                        <div>No orders found</div>
+                        <div className='text-center mt-5'>No orders found</div>
                     )}
-
                 </div>
             </div>
             <Footer />
         </div>
     );
 }
+
 
 
 

@@ -4,7 +4,9 @@ const User = require('../models/User')
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const jwtSecret = "e6e88c2642fa754a8592b05fd7ea2d74eff2a62dbd3db546ac665b34bcd4dc1f";
+require('dotenv').config();
+
+const jwtSecret = process.env.SECRET;
 
 
 router.post('/createuser', [
