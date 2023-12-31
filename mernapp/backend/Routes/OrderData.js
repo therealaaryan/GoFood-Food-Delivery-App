@@ -32,4 +32,13 @@ router.post('/orderData', async (req, res) => {
     }
 });
 
+router.get('/myorderData', async(req, res) => {
+    try {
+        const myData = await Order.find({'email': req.query.email});
+        res.json(myData);
+    } catch (error) {
+        res.status(500).send({ error: "Server Error", message: error.message });
+    }
+});
+
 module.exports = router;

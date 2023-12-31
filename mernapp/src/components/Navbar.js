@@ -31,7 +31,7 @@ export default function Navbar() {
               {/* Render My Orders link only if authToken is present */}
               {isLoggedIn && (
                 <li className="nav-item">
-                  <Link className="nav-link active fs-5" aria-current="page" to="/myorders">My Orders</Link>
+                  <Link className="nav-link active fs-5" aria-current="page" to="/myOrder">My Orders</Link>
                 </li>
               )}
             </ul>
