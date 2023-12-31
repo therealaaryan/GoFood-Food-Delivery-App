@@ -19,15 +19,15 @@ export default function MyOrder() {
         });
         if (response.ok) {
             const responseData = await response.json();
-            // Assuming responseData is an array with a single order object
+            
             const orderData = responseData[0].order_data;
             const groups = orderData.reduce((acc, item) => {
-                // The item could be an object or an array, handle both cases
+                
                 const date = item.Order_date || (item.length && item[0].Order_date);
                 if (date) {
                     if (!acc[date]) acc[date] = [];
                     if (Array.isArray(item)) {
-                        // Skip the first object which is the date object
+                       
                         acc[date].push(...item.slice(1));
                     } else {
                         acc[date].push(item);
