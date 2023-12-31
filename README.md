@@ -3,8 +3,8 @@
 ## Description
 GoFood is a full-stack food delivery application that streamlines the food ordering process. It allows users to browse the menu, create a profile, and log in to order food items. The app focuses on providing a seamless user experience from browsing to order completion.
 
-Frontend is deployed on: https://gofood-client.onrender.com
-Backend is deployed on: https://gofood-v7qb.onrender.com
+- **Frontend is deployed on: https://gofood-client.onrender.com
+- **Backend is deployed on: https://gofood-v7qb.onrender.com
 
 ## Technologies Used
 This project uses the MERN stack with additional libraries and frameworks for enhanced functionality.
