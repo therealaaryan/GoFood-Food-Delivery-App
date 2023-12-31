@@ -11,7 +11,7 @@ export default function MyOrder() {
             console.error('User email is not available');
             return;
         }
-        const response = await fetch(`http://localhost:5000/api/myorderData?email=${encodeURIComponent(userEmail)}`, {
+        const response = await fetch(`https://gofood-v7qb.onrender.com/api/myorderData?email=${encodeURIComponent(userEmail)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
