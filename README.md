@@ -5,6 +5,7 @@ GoFood is a full-stack food delivery application that streamlines the food order
 
 - **Frontend** is deployed on: https://gofood-client.onrender.com
 - **Backend** is deployed on: https://gofood-v7qb.onrender.com
+  (The data may take time to load on the client sie because the client and server has been deployed using resources that are available for free)
 
 I've used Render (https://render.com/) for deployment
 
